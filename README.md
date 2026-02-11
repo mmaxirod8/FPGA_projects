@@ -5,3 +5,5 @@ Some abbreviations like "C_V", "C_IV", "X_N3", are for:
  - X --> Xilinx / N --> Nexys (Board model) / N° (Version number of the board model)
 
 ¡I hope you find it useful!
+
+Credits to: Prof. Dr. Marco Winzker from Bonn-Rhein-Sieg University of Applied Sciences
