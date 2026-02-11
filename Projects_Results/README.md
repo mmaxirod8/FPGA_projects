@@ -1,3 +1,4 @@
-# 🖼️ Galería de Resultados y Pruebas
+# 🖼️ Results and Tests Gallery
 
-Este directorio sirve como evidencia visual de la funcionalidad de los módulos desarrollados en este repositorio. Aquí se consolidan capturas de pantalla de lassimulaciones, resultados de procesamiento de imágenes y fotografías de las placas FPGA en funcionamiento.
+This directory serves as visual evidence of the functionality of the modules developed in this repository. It compiles screenshots of simulations, image processing results, and photographs of the FPGA boards in operation.
+
