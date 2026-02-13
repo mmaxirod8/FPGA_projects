@@ -1,42 +1,42 @@
 # 📶 FIR Filter: Image Sharpening (Cyclone V)
 
-Este directorio contiene la implementación en hardware de un filtro FIR (Finite Impulse Response) configurado como un filtro de nitidez (*Image Sharpening*) para procesamiento de imágenes en tiempo real sobre una FPGA Cyclone V.
+This directory contains the hardware implementation of an FIR (Finite Impulse Response) filter configured as an image sharpening filter for real-time image processing on a Cyclone V FPGA.
+## 📂 Folder Content
 
-## 📂 Contenido de las Carpetas
-
-* **`VHD Files/`**: Código fuente en VHDL. Incluye:
+* **`VHD Files/`**: VHDL source code. Includes:
     * `sharp.vhd`: Top entity del filtro.
-    * `sharp_slice.vhd`, `sharp_linemem.vhd`: Lógica de buffers de línea y slices para el procesamiento de ventanas de píxeles.
-    * `sharp_control.vhd`: Máquina de estados para el control de flujo.
-    * `sim_*.vhd`: Testbenches para la simulación (incluyendo *self-checking*).
-* **`Octave testing/`**: Scripts para MATLAB/Octave (`.m`) utilizados para generar los estímulos de prueba y verificar matemáticamente el algoritmo (abrirlos con NotePad++ o editor de texto).
+    * `sharp_slice.vhd`, `sharp_linemem.vhd`: Line buffer logic and slices for pixel window processing.
+    * `sharp_control.vhd`: State machine for flow control.
+    * `sim_*.vhd`: Testbenches for simulation (including *self-checking*).
+* **`Octave testing/`**: MATLAB/Octave scripts (`.m`) used to generate the test stimuli and mathematically verify the algorithm (open them with NotePad++ or text editor).
 * **`Octave Images/`**: Imágenes de entrada (Bitmaps) y resultados generados por los scripts de prueba.
-* **Archivos Raíz**:
-    * `sharp.sdc`: Archivo de restricciones de tiempo (Synopsys Design Constraints).
-    * `sharp_default_Cyclone_V.qsf`: Configuración de pines y proyecto para Quartus Prime.
+* **Root Files**:
+    * `sharp.sdc`: Time constraints file (Synopsys Design Constraints).
+    * `sharp_default_Cyclone_V.qsf`: Pin configuration and project for Quartus Prime.
 
-## 🚀 Cómo usar este proyecto
+## 🚀 How to use this project
 
-El flujo de trabajo es híbrido, utilizando Octave para pre-procesar las imágenes y ModelSim para la simulación del hardware.
+The workflow is hybrid, using Octave to pre-process the images and ModelSim for hardware simulation.
 
-1.  **Generar Self-Testbench:** Ejecutar el script `sharp_generate_testbench_images.m` (abriendolo con NotePad++ u otro editor de texto, y copiando el codigo en Octave/MatLab). Este codigo lo que hace es: 
-- Aplicar FIR Filter a la imagen input [image stimulation] (que como consecuencia generará una imagen output [image expected])
-- Transformar a ambas imagenes (entrada y salida) en imagenes con formato PPM, con codificacion ASCII (necesarios que la FPGA "lee" durante la simulación.)
-Basicamente tomará de la carpeta (en donde se ubica el script o archivo.m, que debe encontrarse en la misma ubicacion donde esta la imagen a trabajar) la imagen a la que queremos aplicar el FIR Filter, y generara 2 archivos (imagen PPM input e imagen PPM output [FIR Filter Aplicado])
-**Se deben cambiar los nombres de las imagenes tanto en el script a implementar como en archivo VHD testebench (`sim_sharp.vhd`)**
-2.  **Simulación HDL:** Abre el proyecto en ModelSim, compila los archivos de `VHD Files/` y ejecuta el testbench `sim_sharp.vhd`.
-3.  **Validación Cruzada:** El script `sharp_image_filter.m` contiene el algoritmo a implementar. Puedes comparar la salida de la simulación de la FPGA con la salida generada por este script para asegurar que el hardware se comporta exactamente como el modelo matemático. Basicamente esto es una verificacion del algoritmo, que queremos que realice el FPGA, y de forma rapida verificamos si el algoritmo realiza lo que deseamos usando Octave/MatLab para posterior implementacion en la placa.
+1. **Generate Self-Testbench:** Run the script `sharp_generate_testbench_images.m` (opening it with Notepad++ or another text editor, and copying the code into Octave/MatLab). This code does the following:
+- Apply FIR Filter to the input image [image stimulation] (which will consequently generate an output image [image expected])
+- Transform both images (input and output) into PPM format images with ASCII encoding (necessary for the FPGA to "read" during the simulation). Basically, it will take the image to which we want to apply the FIR Filter from the folder (where the script or .m file is located, which must be in the same location as the image to be processed) and generate two files (PPM input image and PPM output image [FIR Filter Applied]).
+**The image names must be changed both in the script to be implemented and in the VHD testbench file (`sim_sharp.vhd`)**
+2. **HDL Simulation:** Open the project in ModelSim, compile the files in `VHD Files/`, and run the testbench `sim_sharp.vhd`.
+3. **Cross Validation:** The script `sharp_image_filter.m` contains the algorithm to be implemented. You can compare the FPGA simulation output with the output generated by this script to ensure that the hardware behaves exactly as the mathematical model describes. Essentially, this is a verification of the algorithm we want the FPGA to perform, and a quick way to check if the algorithm performs as expected using Octave/MATLAB for later implementation on the board.
+  
+## 🛠️ Verification Tools (Octave Scripts)
 
-## 🛠️ Herramientas de Verificación (Octave Scripts)
+Unlike previous C projects, this design uses high-level scripts (`.m`) to automate data flow.
 
-A diferencia de proyectos anteriores en C, este diseño utiliza scripts de alto nivel (`.m`) para automatizar el flujo de datos.
-
-### Funciones Principales
+### Main Functions
 * **`sharp_generate_testbench_images.m`**:
-    * Actúa como el puente entre el mundo de las imágenes (`.bmp`, `.jpg`) y el mundo digital.
-    * Convierte la matriz de píxeles de la imagen en vectores de prueba compatibles con el Testbench VHDL.
+    * It acts as a bridge between the world of images (`.bmp`, `.jpg`) and the digital world.
+    * It converts the image's pixel matrix into test vectors compatible with the VHDL Testbench.
+
 * **`sharp_image_filter.m`**:
-    * Implementa el algoritmo de convolución del filtro de nitidez en software.
-    * Sirve para validar que la lógica aritmética (`sharp_arith.vhd`) implementada en la FPGA calcula los valores de píxel correctos, manejando desbordamientos y saturación de la misma manera que el hardware.
+    * Implements the sharpness filter convolution algorithm in software.
+    * Validates that the arithmetic logic (`sharp_arith.vhd`) implemented in the FPGA calculates the correct pixel values, handling overflows and saturation in the same way as the hardware.
+
 * **`write_ascii_ppm.m`**:
-    * Utilidad para exportar los resultados visuales en formato PPM (Portable Pixel Map), facilitando la visualización rápida de la salida de la simulación sin necesidad de visores complejos.
+    * Utility to export visual results in PPM (Portable Pixel Map) format, facilitating quick visualization of the simulation output without the need for complex viewers.
