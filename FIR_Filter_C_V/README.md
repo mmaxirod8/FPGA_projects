@@ -9,7 +9,7 @@ Este directorio contiene la implementación en hardware de un filtro FIR (Finite
     * `sharp_slice.vhd`, `sharp_linemem.vhd`: Lógica de buffers de línea y slices para el procesamiento de ventanas de píxeles.
     * `sharp_control.vhd`: Máquina de estados para el control de flujo.
     * `sim_*.vhd`: Testbenches para la simulación (incluyendo *self-checking*).
-* **`Octave testing/`**: Scripts de MATLAB/Octave (`.m`) utilizados para generar los estímulos de prueba y verificar matemáticamente el algoritmo.
+* **`Octave testing/`**: Scripts para MATLAB/Octave (`.m`) utilizados para generar los estímulos de prueba y verificar matemáticamente el algoritmo (abrirlos con NotePad++ o editor de texto).
 * **`Octave Images/`**: Imágenes de entrada (Bitmaps) y resultados generados por los scripts de prueba.
 * **Archivos Raíz**:
     * `sharp.sdc`: Archivo de restricciones de tiempo (Synopsys Design Constraints).
@@ -19,9 +19,13 @@ Este directorio contiene la implementación en hardware de un filtro FIR (Finite
 
 El flujo de trabajo es híbrido, utilizando Octave para pre-procesar las imágenes y ModelSim para la simulación del hardware.
 
-1.  **Generar Testbench:** Ejecuta el script `sharp_generate_testbench_images.m` en Octave/Matlab. Esto tomará las imágenes de la carpeta `Octave Images` y generará los archivos de texto/hexadecimal necesarios que la FPGA "lee" durante la simulación.
+1.  **Generar Self-Testbench:** Ejecutar el script `sharp_generate_testbench_images.m` (abriendolo con NotePad++ u otro editor de texto, y copiando el codigo en Octave/MatLab). Este codigo lo que hace es: 
+- Aplicar FIR Filter a la imagen input [image stimulation] (generando una imagen output [image expected])
+- Transformar a ambas imagenes (entrada y salida) en imagenes con formato PPM, con codificacion ASCII (necesarios que la FPGA "lee" durante la simulación.)
+Basicamente tomará de la carpeta (en donde se ubica el script o archivo.m, que debe encontrarse en la misma ubicacion donde esta la imagen a trabajar) la imagen a la que queremos aplicar el FIR Filter, y generara 2 archivos (imagen PPM input e imagen PPM outpu [FIR Filter Aplicado])
+**Se deben cambiar los nombres de las imagenes tanto en el script a implementar como en archivo VHD testebench (`sim_sharp.vhd`)**
 2.  **Simulación HDL:** Abre el proyecto en ModelSim, compila los archivos de `VHD Files/` y ejecuta el testbench `sim_sharp.vhd`.
-3.  **Validación Cruzada:** El script `sharp_image_filter.m` contiene el modelo de referencia en software ("Golden Model"). Puedes comparar la salida de la simulación de la FPGA con la salida generada por este script para asegurar que el hardware se comporta exactamente como el modelo matemático.
+3.  **Validación Cruzada:** El script `sharp_image_filter.m` contiene el algoritmo a implementar. Puedes comparar la salida de la simulación de la FPGA con la salida generada por este script para asegurar que el hardware se comporta exactamente como el modelo matemático. Basicamente esto es una verificacion del algoritmo, que queremos que realice el FPGA, y de forma rapida verificamos si el algoritmo realiza lo que deseamos usando Octave/MatLab para posterior implementacion en la placa.
 
 ## 🛠️ Herramientas de Verificación (Octave Scripts)
 
