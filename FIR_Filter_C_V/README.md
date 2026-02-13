@@ -20,7 +20,7 @@ Este directorio contiene la implementación en hardware de un filtro FIR (Finite
 El flujo de trabajo es híbrido, utilizando Octave para pre-procesar las imágenes y ModelSim para la simulación del hardware.
 
 1.  **Generar Self-Testbench:** Ejecutar el script `sharp_generate_testbench_images.m` (abriendolo con NotePad++ u otro editor de texto, y copiando el codigo en Octave/MatLab). Este codigo lo que hace es: 
-- Aplicar FIR Filter a la imagen input [image stimulation] (generando una imagen output [image expected])
+- Aplicar FIR Filter a la imagen input [image stimulation] (que como consecuencia generará una imagen output [image expected])
 - Transformar a ambas imagenes (entrada y salida) en imagenes con formato PPM, con codificacion ASCII (necesarios que la FPGA "lee" durante la simulación.)
 Basicamente tomará de la carpeta (en donde se ubica el script o archivo.m, que debe encontrarse en la misma ubicacion donde esta la imagen a trabajar) la imagen a la que queremos aplicar el FIR Filter, y generara 2 archivos (imagen PPM input e imagen PPM output [FIR Filter Aplicado])
 **Se deben cambiar los nombres de las imagenes tanto en el script a implementar como en archivo VHD testebench (`sim_sharp.vhd`)**
