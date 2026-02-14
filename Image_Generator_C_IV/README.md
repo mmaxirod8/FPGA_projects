@@ -10,7 +10,7 @@ Este proyecto implementa un generador de señal de video sintética en VHDL. Su 
     * **Animación:** Simula una carretera curva calculando la posición central (`center_pos`) variable línea por línea.
 
 ### 🕵️ Módulos de Procesamiento (Lane Detection)
-*Esta carpeta también incluye los archivos fuente del algoritmo de detección que se alimenta de este generador:*
+*Esta carpeta también incluye los archivos fuente del algoritmo de detección de bordes que se alimenta de este generador. Como veran, son los mismos archivos que se encuentran en el proyecto FPGA `Lane_detection_C_V` (de este mismo repositorio), por lo que podemos aplicar el algoritmo de este mismo al de `Image_Generator_C_IV`:*
 * **`lane.vhd`**: Entidad superior que toma la señal de video y aplica detección de bordes.
 * **`lane_sobel.vhd`**: Implementación del filtro Sobel para detectar los carriles.
 * **`lane_linemem.vhd`**: Memoria de línea (Line Buffer) para el procesamiento de ventanas 3x3.
