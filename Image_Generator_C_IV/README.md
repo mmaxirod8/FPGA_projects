@@ -1,35 +1,35 @@
 # 🖼️ Image Generator: Synthetic Street Scene
 
-Este proyecto implementa un generador de señal de video sintética en VHDL. Su función principal es simular la entrada de una cámara para sistemas de asistencia al conductor (ADAS), generando una escena de carretera con movimiento y curvas sin necesidad de hardware de captura externo. Este proyecto se realizo con una FPGA Altera Cyclone IV (EP4CE22E22C7).
+This project implements a synthetic video signal generator in VHDL. Its main function is to simulate the input from a camera for Advanced Driver Assistance Systems (ADAS), generating a road scene with movement and curves without the need for external capture hardware. This project was carried out using an Altera Cyclone IV FPGA (EP4CE22E22C7).
 
-## 📂 Contenido de la Carpeta
+## 📂 Folder Content
 
-### 🎥 Módulo Generador (Core)
-* **`street_image.vhd`**: El corazón del proyecto. Genera señales de sincronismo VGA (640x480 @ 60Hz) y "dibuja" procedimentalmente la escena.
-    * **Elementos generados:** Cielo, pasto y una carretera gris con línea central.
-    * **Animación:** Simula una carretera curva calculando la posición central (`center_pos`) variable línea por línea.
+### 🎥 Generator Module (Core)
+* **`street_image.vhd`**: The heart of the project. It generates VGA sync signals (640x480 @ 60Hz) and procedurally "draws" the scene.
+    * **Elementos generados:** Sky, grass and a gray road with a center line.
+    * **Animación:** Simulate a curved road by calculating the variable center position (`center_pos`) line by line.
+    
+### 🕵️ Processing Modules (Lane Detection)
+*This folder also includes the source files for the edge detection algorithm that this generator uses. As you'll see, these are the same files found in the FPGA project `Lane_detection_C_V` (from this same repository), so we can apply its algorithm to `Image_Generator_C_IV`.:*
+* **`lane.vhd`**: Upper entity that takes the video signal and applies edge detection.
+* **`lane_sobel.vhd`**: Implementation of the Sobel filter to detect lanes.
+* **`lane_linemem.vhd`**: Line buffer for 3x3 window processing.
 
-### 🕵️ Módulos de Procesamiento (Lane Detection)
-*Esta carpeta también incluye los archivos fuente del algoritmo de detección de bordes que se alimenta de este generador. Como veran, son los mismos archivos que se encuentran en el proyecto FPGA `Lane_detection_C_V` (de este mismo repositorio), por lo que podemos aplicar el algoritmo de este mismo al de `Image_Generator_C_IV`:*
-* **`lane.vhd`**: Entidad superior que toma la señal de video y aplica detección de bordes.
-* **`lane_sobel.vhd`**: Implementación del filtro Sobel para detectar los carriles.
-* **`lane_linemem.vhd`**: Memoria de línea (Line Buffer) para el procesamiento de ventanas 3x3.
+### 🧪 Simulation
+* **`sim_street_image.vhd`**: Testbench designed to visually validate the generator.
+    * It generates an `.ppm` (Portable Pixel Map) output file that allows you to see on your computer the exact image that the FPGA would send to the VGA monitor.
 
-### 🧪 Simulación
-* **`sim_street_image.vhd`**: Testbench diseñado para validar visualmente el generador.
-    * Genera un archivo de salida `.ppm` (Portable Pixel Map) que permite ver en la computadora la imagen exacta que la FPGA enviaría al monitor VGA.
+## 🚀 How to test the Generator
 
-## 🚀 Cómo probar el Generador
+This project does not require a real camera. You can view the output directly through simulation:
 
-Este proyecto no requiere una cámara real. Puedes visualizar la salida directamente mediante simulación:
+1.  **Open ModelSim:** Load the `sim_street_image.vhd` file and compile the project.
+2.  **Run Simulation:** Run the simulation for at least 1 video frame (approx. 16.7ms).
+3.  **Verify Output:** The testbench will create a file called `image_out.ppm`.
+    * You can open this file with *IrfanView*, *GIMP* or online converters to see the synthetically generated road.
 
-1.  **Abrir ModelSim:** Carga el archivo `sim_street_image.vhd` y compila el proyecto.
-2.  **Ejecutar Simulación:** Corre la simulación durante al menos 1 frame de video (aprox 16.7ms).
-3.  **Verificar Salida:** El testbench creará un archivo llamado `image_out.ppm`.
-    * Puedes abrir este archivo con *IrfanView*, *GIMP* o conversores online para ver la carretera generada sintéticamente.
-
-## ⚙️ Detalles Técnicos VGA
-El generador sigue el estándar de temporización VGA industrial:
-* **Reloj de Píxel:** 25 MHz.
-* **Resolución Activa:** 640 x 480 píxeles.
-* **Sincronismo:** Generación manual de pulsos `h_sync` y `v_sync` basada en contadores.
+## ⚙️ VGA Technical Details
+The generator follows the industrial VGA timing standard:
+* **Pixel Clock:** 25 MHz.
+* **Active Resolution:** 640 x 480 pixels.
+* **Synchronization:** Manual generation of `h_sync` and `v_sync` pulses based on counters.
