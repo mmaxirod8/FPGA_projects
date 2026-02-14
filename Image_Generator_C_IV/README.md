@@ -6,8 +6,8 @@ This project implements a synthetic video signal generator in VHDL. Its main fun
 
 ### 🎥 Generator Module (Core)
 * **`street_image.vhd`**: The heart of the project. It generates VGA sync signals (640x480 @ 60Hz) and procedurally "draws" the scene.
-    * **Elementos generados:** Sky, grass and a gray road with a center line.
-    * **Animación:** Simulate a curved road by calculating the variable center position (`center_pos`) line by line.
+    * **Generated elements:** Sky, grass and a gray road with a center line.
+    * **Animation:** Simulate a curved road by calculating the variable center position (`center_pos`) line by line.
     
 ### 🕵️ Processing Modules (Lane Detection)
 *This folder also includes the source files for the edge detection algorithm that this generator uses. As you'll see, these are the same files found in the FPGA project `Lane_detection_C_V` (from this same repository), so we can apply its algorithm to `Image_Generator_C_IV`.:*
