@@ -11,9 +11,10 @@ Este directorio contiene la implementación en hardware de un algoritmo de detec
 
 ## 🚀 Cómo usar este proyecto
 
-1. **Generar estímulos:** Usa `bmp2sim.exe` para convertir una imagen de la carpeta `Images` a `.txt`.
-2. **Simular:** Ejecuta el testbench en ModelSim cargando el archivo `.txt` generado.
-3. **Ver resultados:** Usa `sim2bmp.exe` para convertir el `.txt` de salida de ModelSim a una imagen `.bmp` visible.
+1. Primero, seleccionamos la imagen a trabajar (input image [stimuli]), con esto, utilizando el codigo C `fixed-point`, logramos obtener nuestra imagen resultado (output image [reference]) donde se aplico el Lane detection
+2. Luego, como VHDL no puede leer el formato BMP de las imagenes del punto anterior, mediante los BMP files (en este caso `bmp2sim.exe`), podemos convertilas en archivos de texto (`.txt`). Cada pixel de la imagen es representado por medio de RGB, por lo que este archivo de texto tiene un tamaño grande.
+3. Luego estan los archivos VHDL en donde se encuenta la parte de `testbench` y `design`, que junto a los archivos `.txt` del punto anterior, podemos integrarlos y usarlos en `ModelSim` (VHDL Simulator). De aqui obtenemos un resultado de la simulacion en archivo `.txt`.
+4. Y por ultimo, para ver los resultados en una imagen, usamos el archivo BMP `sim2bmp.exe` para convertir el `.txt` de salida de ModelSim a una imagen `.bmp` visible.
 
 ## 🛠️ Herramientas de Procesamiento (a.exe)
 
