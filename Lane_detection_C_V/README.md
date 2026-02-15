@@ -16,6 +16,10 @@ Este directorio contiene la implementación en hardware de un algoritmo de detec
 3. Luego estan los archivos VHDL en donde se encuenta la parte de `testbench` y `design`, que junto a los archivos `.txt` del punto anterior, podemos integrarlos y usarlos en `ModelSim` (VHDL Simulator). De aqui obtenemos un resultado de la simulacion en archivo `.txt`.
 4. Y por ultimo, para ver los resultados en una imagen, usamos el archivo BMP `sim2bmp.exe` para convertir el `.txt` de salida de ModelSim a una imagen `.bmp` visible.
 
+## ⚡ Desing Flow
+<img width="1770" height="729" alt="Design flow Lane detection" src="https://github.com/user-attachments/assets/44bf5162-2353-4b90-9c55-0bc82e8e3f2d" />
+
+
 ## 🛠️ Herramientas de Procesamiento (a.exe)
 
 El archivo `a.exe` incluido en la raíz de esta carpeta es el motor de procesamiento de imágenes para la simulación. 
