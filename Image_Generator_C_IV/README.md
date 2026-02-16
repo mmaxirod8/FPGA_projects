@@ -10,8 +10,8 @@ This project implements a synthetic video signal generator in VHDL. Its main fun
     * **Animation:** Simulate a curved road by calculating the variable center position (`center_pos`) line by line.
     
 ### 🕵️ Processing Modules (Lane Detection)
-*This folder also includes the source files for the edge detection algorithm that this generator uses. As you'll see, these are the same files found in the FPGA project `Lane_detection_C_V` (from this same repository), so we can apply its algorithm to `Image_Generator_C_IV`.:*
-* **`lane.vhd`**: Upper entity that takes the video signal and applies edge detection.
+*This folder also includes the same files found in the FPGA `Lane_detection_C_V` project (from this same repository), so we can apply its algorithm to `Image_Generator_C_IV`:*
+* **`lane.vhd`**: Upper entity that takes the video signal and applies lane detection.
 * **`lane_sobel.vhd`**: Implementation of the Sobel filter to detect lanes.
 * **`lane_linemem.vhd`**: Line buffer for 3x3 window processing.
 
