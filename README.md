@@ -9,5 +9,5 @@ Some abbreviations (like "C_V", "C_IV", "X_N_3", etc.) are for the following FPG
 
 
 Credits to: 
-- Prof. Dr. Marco Winzker from Bonn-Rhein-Sieg University of Applied Sciences
-- Andrea Schwandt from Bonn-Rhein-Sieg University of Applied Sciences
+- *Prof. Dr. Marco Winzker* from Bonn-Rhein-Sieg University of Applied Sciences
+- *Andrea Schwandt* from Bonn-Rhein-Sieg University of Applied Sciences
