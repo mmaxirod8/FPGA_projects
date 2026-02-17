@@ -5,7 +5,7 @@ This directory contains the hardware implementation of a Lane Detection algorith
 
 * **`VHD Files/`**: Source code in VHDL (filtering, memory and control modules).
 * **`C files/`**: C scripts (`bmp2sim`, `sim2bmp`) to convert BMP images to text and vice versa (necessary for simulation).
-* **`Images/`**: Test images (roads) and visual results.
+* **`Images/`**: Input & Output images we obtain
 * **`Input and Output images txt/`**: Generated text files that represent the pixels for the simulation.
 
 ## 🚀 How to use this project
