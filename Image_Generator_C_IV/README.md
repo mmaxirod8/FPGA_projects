@@ -15,7 +15,7 @@ This project implements a synthetic video signal generator in VHDL. Its main fun
 
 ## 🚀 How to test & implement the Generator
 
-This project does not require a real camera. You can view the output directly through simulation or remote labs (you can check this out on `Images Results` of this repository):
+This project does not require a real camera. You can view the output directly through simulation or remote labs (you can check this out on `Projects_Results/` of this repository):
 
 * ***Simulation:***
 
