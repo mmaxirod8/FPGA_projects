@@ -13,14 +13,20 @@ This project implements a synthetic video signal generator in VHDL. Its main fun
 * **`sim_street_image.vhd`**: Testbench designed to visually validate the generator.
     * It generates an `.ppm` (Portable Pixel Map) output file that allows you to see on your computer the exact image that the FPGA would send to the VGA monitor.
 
-## 🚀 How to test the Generator
+## 🚀 How to test & implement the Generator
 
-This project does not require a real camera. You can view the output directly through simulation:
+This project does not require a real camera. You can view the output directly through simulation or remote labs (you can check this out on `Images Results` of this repository):
+
+* ***Simulation:***
 
 1.  **Open ModelSim:** Load the `sim_street_image.vhd` file and compile the project.
 2.  **Run Simulation:** Run the simulation for at least 1 video frame (approx. 16.7ms).
 3.  **Verify Output:** The testbench will create a file called `image_out.ppm`.
     * You can open this file with *IrfanView*, *GIMP* or online converters to see the synthetically generated road.
+
+* ***Implementation:***
+1.
+2.
 
   ### 🕵️ We can add an extra: Processing Modules (Lane Detection)
 *This folder also includes the same files found in the FPGA `Lane_detection_C_V` project (from this same repository), so we can apply its algorithm to `Image_Generator_C_IV`:*
