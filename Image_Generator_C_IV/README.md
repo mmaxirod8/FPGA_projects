@@ -26,7 +26,7 @@ This project does not require a real camera. You can view the output directly th
 
 * ***Implementation:***
 1. Load the `street_image.vhd` and `lane_default_Cyclone_IV.qsf` (pin map) files into Quartus Prime, and run the Synthesis
-2. Obtenido el archivo .bit `street_image.sof` de la Sintesis (located in the output_files directory of your Quartus-Project on our computer), ya podemos ejecutar este mismo en nuestra FPGA o Remote Lab
+2. Once we have obtained the .bit file `street_image.sof` from the Synthesis (located in the output_files directory of your Quartus-Project on our computer), we can now run it on our FPGA or Remote Lab
 
   ### 🕵️ We can add an extra: Processing Modules (Lane Detection)
 *This folder also includes the same files found in the FPGA `Lane_detection_C_V` project (from this same repository), so we can apply its algorithm to `Image_Generator_C_IV`:*
