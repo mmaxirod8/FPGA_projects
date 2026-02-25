@@ -25,8 +25,8 @@ This project does not require a real camera. You can view the output directly th
     * You can open this file with *IrfanView*, *GIMP* or online converters to see the synthetically generated road.
 
 * ***Implementation:***
-1. Cargar los archivos `street_image.vhd` y `lane_default_Cyclone_IV.qsf` a Quartus Prime, y correr la Sintesis
-2. Obtenido el archivo .bit `street_image.sof` de la Sintesis, ya podemos ejecutar este mismo en nuestra FPGA o Remote Lab
+1. Cargar los archivos `street_image.vhd` y `lane_default_Cyclone_IV.qsf` (pin map) a Quartus Prime, y correr la Sintesis
+2. Obtenido el archivo .bit `street_image.sof` de la Sintesis (located in the output_files directory of your Quartus-Project on our computer), ya podemos ejecutar este mismo en nuestra FPGA o Remote Lab
 
   ### 🕵️ We can add an extra: Processing Modules (Lane Detection)
 *This folder also includes the same files found in the FPGA `Lane_detection_C_V` project (from this same repository), so we can apply its algorithm to `Image_Generator_C_IV`:*
