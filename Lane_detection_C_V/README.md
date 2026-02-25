@@ -17,7 +17,7 @@ This directory contains the hardware implementation of a Lane Detection algorith
 
 - ***Implementation:***
 
-## ⚡ Desing Flow
+## ⚡ Simulation Desing Flow
 <img width="1770" height="729" alt="Design flow Lane detection" src="https://github.com/user-attachments/assets/44bf5162-2353-4b90-9c55-0bc82e8e3f2d" />
 
 ## 🛠️ Processing Tools (a.exe)
