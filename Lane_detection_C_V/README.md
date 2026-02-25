@@ -9,6 +9,10 @@ This directory contains the hardware implementation of a Lane Detection algorith
 * **`Input and Output images txt/`**: Generated text files that represent the pixels for the simulation.
 
 ## 🚀 How to use this project
+
+### Simulation Desing Flow
+<img width="1770" height="729" alt="Design flow Lane detection" src="https://github.com/user-attachments/assets/44bf5162-2353-4b90-9c55-0bc82e8e3f2d" />
+
 - ***Simulation:***
 1. First, we select the image to work with (input image [stimuli]). Using the C code `fixed-point`, we obtain our output image (output image [reference]) where Lane detection was applied.
 2. Next, since VHDL cannot read the BMP format of the images from the previous step, we can convert them into text files (`.txt`) using the BMP files (in this case, `bmp2sim.exe`). Each pixel in the image is represented using RGB, so this text file is quite large.
@@ -17,8 +21,6 @@ This directory contains the hardware implementation of a Lane Detection algorith
 
 - ***Implementation:***
 
-## ⚡ Simulation Desing Flow
-<img width="1770" height="729" alt="Design flow Lane detection" src="https://github.com/user-attachments/assets/44bf5162-2353-4b90-9c55-0bc82e8e3f2d" />
 
 ## 🛠️ Processing Tools (a.exe)
 
