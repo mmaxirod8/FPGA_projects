@@ -24,7 +24,7 @@ This directory contains the hardware implementation of a Lane Detection algorith
 1. Abrimos ModelSim
 2. Cargamos los siguientes archivos en el programa:
 
-<img width="600" height="782" alt="image" src="https://github.com/user-attachments/assets/c7400780-bf31-4d48-b842-eed4e78f077e" />
+<img width= "500" height="600" alt="image" src="https://github.com/user-attachments/assets/c7400780-bf31-4d48-b842-eed4e78f077e" />
 
 3. Buscamos en la seccion superior la pestaña `Compile`, la desplegamos y le damos en `Compile All`.
 4. Luego buscamos nuevamente en la parte superior la pestaña `Simulate`, desplegamos y le damos en `Start Simulation`.
@@ -37,7 +37,9 @@ This directory contains the hardware implementation of a Lane Detection algorith
 
 ***Aclaracion***: Aqui debemos de cambiar el formato de algunas variables. Aquellas que salgan con un valor de *UUUUUUUU*, las seleccionamos, le damos click derecho, en la ventana desplegamos la opcion `Radix` y por ultimo seleccionamos `Hexadecimal`. 
 
-7. 
+7. Finalmente, le damos en `Start Simulation`:
+<img width="900" height="200" alt="image" src="https://github.com/user-attachments/assets/a5df0943-78b5-4413-b810-cb3b711cb2bd" />
+
 
 
 ---
@@ -45,7 +47,7 @@ This directory contains the hardware implementation of a Lane Detection algorith
 - ***Implementation on Quartus Prime & FPGA board:***
 1. Como primer paso, configuramos Quartus Prime, dandole la ubicacion o directorio (en este mismo se deberan encontrar todos los archivos VHDL) y nombre del proyecto (este ultimo se debe llamar como el top level file, en este caso: `lane`). Luego le damos en `Next` y en `Empty Project`, donde aqui seleccionaremos la opcion `Add all` y se cargaran todos los archivos VHDL.
 
-<img width="600" height="934" alt="Captura de pantalla 2026-02-26 143751" src="https://github.com/user-attachments/assets/4dcda073-41ed-4b60-a6da-2a1cd790ba44" />
+<img width="500" height="800" alt="Captura de pantalla 2026-02-26 143751" src="https://github.com/user-attachments/assets/4dcda073-41ed-4b60-a6da-2a1cd790ba44" />
 
 
 Seguido a esto deberemos colocar nuestra placa, en este caso, la Altera Cyclone V y su modelo: 5CEBA2F17C6, y seleccionamos en la parte inferior, donde sale como una especie de lista, a nuestro modelo de placa. Y finalmente generamos el proyecto.
