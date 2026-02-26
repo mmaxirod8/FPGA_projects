@@ -18,8 +18,20 @@ This directory contains the hardware implementation of a Lane Detection algorith
 3. Then there are the VHDL files containing the `testbench` and `design` sections. These, along with the `.txt` files from the previous step, can be integrated and used in `ModelSim` (VHDL Simulator). This results in a `.txt` file.
 4. And finally, to see the results in an image, we use the BMP file `sim2bmp.c` to convert the `.txt` output of ModelSim to a viewable `.bmp` image.
 
+---
+
 - ***Simulation on ModelSim:***
 1. Abrimos ModelSim
+2. Cargamos los siguientes archivos en el programa:
+
+<img width="600" height="782" alt="image" src="https://github.com/user-attachments/assets/c7400780-bf31-4d48-b842-eed4e78f077e" />
+
+3. Buscamos en la seccion superior la pestaña `Compile`, la desplegamos y le damos en `Compile All`.
+4. Luego buscamos nuevamente en la parte superior la pestaña `Simulate`, desplegamos y le damos en `Start Simulation`.
+5. Nos aparecera una ventana en donde tenemos que clickear en el signo mas de la casilla `work`. Se desplegara una lista con los archivos que subimos anteriormente, buscamos el archivo `sim_lane`, y le damos de nuevo al signo mas, donde por ultimo se desplegara una sub-lista y se encontrara el archivo `sim` (Arquitecture). Le damos click y luego en `Ok`.
+6. 
+
+---
 
 - ***Implementation on Quartus Prime & FPGA board:***
 1. Como primer paso, configuramos Quartus Prime, dandole la ubicacion o directorio (en este mismo se deberan encontrar todos los archivos VHDL) y nombre del proyecto (este ultimo se debe llamar como el top level file, en este caso: `lane`). Luego le damos en `Next` y en `Empty Project`, donde aqui seleccionaremos la opcion `Add all` y se cargaran todos los archivos VHDL.
