@@ -22,9 +22,9 @@ This directory contains the hardware implementation of a Lane Detection algorith
 
 ---
 
-- ***Simulation on ModelSim:***
+- 📌 ***Simulation on ModelSim: (paso a paso, util para otros proyectos)***
 1. Abrimos ModelSim
-2. Cargamos los siguientes archivos en el programa:
+2. Cargamos los siguientes archivos VHDL en el programa: (aqui se pueden cargar otros archivos VHDL, dependiendo del proyecto en el que estemos)
 
 <p align="center">
 <img width= "500" height="600" alt="image" src="https://github.com/user-attachments/assets/c7400780-bf31-4d48-b842-eed4e78f077e" />
@@ -32,8 +32,8 @@ This directory contains the hardware implementation of a Lane Detection algorith
 
 3. Buscamos en la seccion superior la pestaña `Compile`, la desplegamos y le damos en `Compile All`.
 4. Luego buscamos nuevamente en la parte superior la pestaña `Simulate`, desplegamos y le damos en `Start Simulation`.
-5. Nos aparecera una ventana en donde tenemos que clickear en el signo mas de la casilla `work`. Se desplegara una lista con los archivos que subimos anteriormente, buscamos el archivo `sim_lane`, y le damos de nuevo al signo mas, donde por ultimo se desplegara una sub-lista y se encontrara el archivo `sim` (Arquitecture). Le damos click y luego en `Ok`.
-6. Luego, debemos ubicar las variables de input y output, seleccionadolas y arrastrandolas, de la siguiente manera:
+5. Nos aparecera una ventana en donde tenemos que clickear en el signo mas de la casilla `work`. Se desplegara una lista con los archivos que subimos anteriormente, buscamos el archivo `sim_lane` (asi se llama el archivo de simulacion de este proyecto), y le damos de nuevo al signo mas, donde por ultimo se desplegara una sub-lista y se encontrara el archivo `sim` (Arquitecture). Le damos click y luego en `Ok`.
+6. Luego, debemos ubicar las variables de input y output (en algunos proyectos quizas no existan todas estas variables, ya que varian segun el algoritmo implementado), seleccionadolas y arrastrandolas, de la siguiente manera:
 
 <p align="center">
 <img width="500" height="630" alt="image" src="https://github.com/user-attachments/assets/8120d1b4-088a-4293-b7b7-bf47bb245b69" />
@@ -54,8 +54,8 @@ This directory contains the hardware implementation of a Lane Detection algorith
 
 ---
 
-- ***Implementation on Quartus Prime & FPGA board:***
-1. Como primer paso, configuramos Quartus Prime, dandole la ubicacion o directorio (en este mismo se deberan encontrar todos los archivos VHDL) y nombre del proyecto (este ultimo se debe llamar como el top level file, en este caso: `lane`). Luego le damos en `Next` y en `Empty Project`, donde aqui seleccionaremos la opcion `Add all` y se cargaran todos los archivos VHDL.
+- 📌 ***Implementation on Quartus Prime & FPGA board: (paso a paso, util para otros proyectos)***
+1. Como primer paso, configuramos Quartus Prime, dandole la ubicacion o directorio (en este mismo se deberan encontrar todos los archivos VHDL del proyecto en el que estemos trabajando) y nombre del proyecto (este ultimo se debe llamar como el top level file de este proyecto, en este caso: `lane`). Luego le damos en `Next` y en `Empty Project`, donde aqui seleccionaremos la opcion `Add all` y se cargaran todos los archivos VHDL.
 
 <p align="center">
 <img width="500" height="800" alt="Captura de pantalla 2026-02-26 143751" src="https://github.com/user-attachments/assets/4dcda073-41ed-4b60-a6da-2a1cd790ba44" />
@@ -64,7 +64,7 @@ This directory contains the hardware implementation of a Lane Detection algorith
 Seguido a esto deberemos colocar nuestra placa, en este caso, la Altera Cyclone V y su modelo: 5CEBA2F17C6, y seleccionamos en la parte inferior, donde sale como una especie de lista, a nuestro modelo de placa. Finalmente generamos el proyecto.
 
 2. En el apartado superior de `Project Navigator` lo colocamos en modo `Files`.
-3. Procedemos a seleccionar con un click el archivo `lane.vhd`. Luego nos vamos a la seccion superior donde aparacera `Assigments` y dentro de esta opcion buscamos `Import Assigments`. Aqui deberemos buscar, dandole click a los tres puntos, el archivo que contiene el pin map de la placa, el cual es (para este caso) `lane_default_Cyclone_V.qsf`.
+3. Procedemos a seleccionar con un click el archivo `lane.vhd` (archivo top level del proyecto). Luego nos vamos a la seccion superior donde aparacera `Assigments` y dentro de esta opcion buscamos `Import Assigments`. Aqui deberemos buscar, dandole click a los tres puntos, el archivo que contiene el pin map de la placa en la que ejecutaremos el proyecto, el cual es (para este caso) `lane_default_Cyclone_V.qsf`.
 4. Una vez aplicado los pasos anteriores, le damos en `Run` (simbolo play) y nos ejecutara la Sintesis, largandonos como resultado un archivo .bit .
 5. Y aplicado los anteriores pasos, ya podremos subir el arhivo .bit obtenido ( o el archivo con extension `.sof`) en una placa FPGA fisica o en un laboratorio remoto de FPGA.
 
