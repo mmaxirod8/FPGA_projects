@@ -3,7 +3,7 @@
 This directory contains the hardware implementation of an FIR (Finite Impulse Response) filter configured as an image sharpening filter for real-time image processing on a Cyclone V FPGA.
 ## 📂 Folder Content
 
-* **`VHDL Files/`**: VHDL source code. Includes:
+* **`VHD Files/`**: VHDL source code. Includes:
     * `sharp.vhd`: Top entity del filtro.
     * `sharp_slice.vhd`, `sharp_linemem.vhd`: Line buffer logic and slices for pixel window processing.
     * `sharp_control.vhd`: State machine for flow control.
@@ -22,13 +22,13 @@ The workflow is hybrid, using Octave to pre-process the images and ModelSim for 
 1. **Generate Self-Testbench:** Run the script `sharp_generate_testbench_images.m` (opening it with Notepad++ or another text editor, and copying the code into Octave/MatLab). This code does the following:
      * Apply FIR Filter to the input image [image stimulation] (which will consequently generate an output image [image expected])
      * Transform both images (input and output) into PPM format images with ASCII encoding (necessary for the FPGA to "read" during the simulation). Basically, it will take the image to which we want to apply the FIR Filter from the folder (where the script or .m file is located, which must be in the same location as the image to be processed) and generate two files (PPM input image and PPM output image [FIR Filter Applied]).
-**The image names must be changed both in the script to be implemented and in the VHD testbench file (`sim_sharp.vhd`)**
-2. **VHDL Simulation:** Open the project in ModelSim, compile the files in `VHDL Files/`, and run the testbench `sim_sharp.vhd`. Para resolver dudas, pueden ver mejor el paso a paso de como se realiza la simulacion en ModelSim en el proyecto `Lane_detection_C_V` de este repositorio.
+**The image names must be changed both in the script to be implemented and in the VHDL testbench file (`sim_sharp.vhd`)**
+2. **VHDL Simulation:** Open the project in ModelSim, compile the files in `VHD Files/`, and run the testbench `sim_sharp.vhd`. Para resolver dudas, pueden ver mejor el paso a paso de como se realiza la simulacion en ModelSim en el proyecto `Lane_detection_C_V` de este repositorio.
 
 ---
 
 - ***Implemtation on Quartus Prime & FPGA board***
-     * After simulating in ModelSim and verifying the code's functionality, we will proceed to implement all the `VHDL Files/` plus the `.qsf` file of the board to be used (pin map) in Altera Quartus Prime (by executing "Synthesis"). From here, we will obtain the `.sof` bitfile (located in the `output_files` directory of your Quartus-Project on our computer), and with this, we are ready to implement our algorithm on a remote or physical FPGA.
+     * After simulating in ModelSim and verifying the code's functionality, we will proceed to implement all the `VHD Files/` plus the `.qsf` file of the board to be used (pin map) in Altera Quartus Prime (by executing "Synthesis"). From here, we will obtain the `.sof` bitfile (located in the `output_files` directory of your Quartus-Project on our computer), and with this, we are ready to implement our algorithm on a remote or physical FPGA.
 
 ---
 
