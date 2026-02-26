@@ -24,7 +24,7 @@ This directory contains the hardware implementation of a Lane Detection algorith
 
 - 📌 ***Simulation on ModelSim: (paso a paso, util para otros proyectos)***
 1. Abrimos ModelSim
-2. Cargamos los siguientes archivos VHDL en el programa: (aqui se pueden cargar otros archivos VHDL, dependiendo del proyecto en el que estemos)
+2. En esta parte si o si deben estar los archivos VHDL de diseño y testbench (simulacion). Por lo que cargamos los siguientes archivos VHDL en el programa: (aqui se pueden cargar otros archivos VHDL, dependiendo del proyecto en el que estemos)
 
 <p align="center">
 <img width= "500" height="600" alt="image" src="https://github.com/user-attachments/assets/c7400780-bf31-4d48-b842-eed4e78f077e" />
