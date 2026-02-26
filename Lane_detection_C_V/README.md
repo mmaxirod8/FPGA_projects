@@ -61,7 +61,7 @@ This directory contains the hardware implementation of a Lane Detection algorith
 <img width="500" height="800" alt="Captura de pantalla 2026-02-26 143751" src="https://github.com/user-attachments/assets/4dcda073-41ed-4b60-a6da-2a1cd790ba44" />
 </p>
 
-Seguido a esto deberemos colocar nuestra placa, en este caso, la Altera Cyclone V y su modelo: 5CEBA2F17C6, y seleccionamos en la parte inferior, donde sale como una especie de lista, a nuestro modelo de placa. Y finalmente generamos el proyecto.
+Seguido a esto deberemos colocar nuestra placa, en este caso, la Altera Cyclone V y su modelo: 5CEBA2F17C6, y seleccionamos en la parte inferior, donde sale como una especie de lista, a nuestro modelo de placa. Finalmente generamos el proyecto.
 
 2. En el apartado superior de `Project Navigator` lo colocamos en modo `Files`.
 3. Procedemos a seleccionar con un click el archivo `lane.vhd`. Luego nos vamos a la seccion superior donde aparacera `Assigments` y dentro de esta opcion buscamos `Import Assigments`. Aqui deberemos buscar, dandole click a los tres puntos, el archivo que contiene el pin map de la placa, el cual es (para este caso) `lane_default_Cyclone_V.qsf`.
