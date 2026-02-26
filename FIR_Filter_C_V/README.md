@@ -32,6 +32,8 @@ The workflow is hybrid, using Octave to pre-process the images and ModelSim for 
 - ***Implemtation on Quartus Prime & FPGA board***
      * After simulating in ModelSim and verifying the code's functionality, we will proceed to implement all the `VHD Files/` plus the `.qsf` file of the board to be used (pin map) in Altera Quartus Prime (by executing "Synthesis"). From here, we will obtain the `.sof` bitfile (located in the `output_files` directory of your Quartus-Project on our computer), and with this, we are ready to implement our algorithm on a remote or physical FPGA.
 
+📌 ***Aclaracion:*** Para resolver dudas sobre como se realizan los primeros pasos y la configuracion de la implementacion en Quartus Prime, consulta la guía detallada en el directorio `Lane_detection_C_V` de este repositorio.
+
 ---
 
 - ***Verification***
