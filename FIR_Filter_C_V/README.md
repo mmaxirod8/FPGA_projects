@@ -23,7 +23,9 @@ The workflow is hybrid, using Octave to pre-process the images and ModelSim for 
      * Apply FIR Filter to the input image [image stimulation] (which will consequently generate an output image [image expected])
      * Transform both images (input and output) into PPM format images with ASCII encoding (necessary for the FPGA to "read" during the simulation). Basically, it will take the image to which we want to apply the FIR Filter from the folder (where the script or .m file is located, which must be in the same location as the image to be processed) and generate two files (PPM input image and PPM output image [FIR Filter Applied]).
 **The image names must be changed both in the script to be implemented and in the VHDL testbench file (`sim_sharp.vhd`)**
-2. **VHDL Simulation:** Open the project in ModelSim, compile the files in `VHD Files/`, and run the testbench `sim_sharp.vhd`. Para resolver dudas, pueden ver mejor el paso a paso de como se realiza la simulacion en ModelSim en el proyecto `Lane_detection_C_V` de este repositorio.
+2. **VHDL Simulation:** Open the project in ModelSim, compile the files in `VHD Files/`, and run the testbench `sim_sharp.vhd`. 
+
+📌 ***Aclaracion:*** Para resolver dudas sobre como se realizan los primeros pasos y la configuracion de la simulación en ModelSim, consulta la guía detallada en el directorio `Lane_detection_C_V` de este repositorio.
 
 ---
 
