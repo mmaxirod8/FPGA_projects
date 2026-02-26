@@ -13,7 +13,7 @@ This directory contains the hardware implementation of a Lane Detection algorith
 ### Simulation Desing Flow (Idea & Concepts)
 <img width="1770" height="729" alt="Design flow Lane detection" src="https://github.com/user-attachments/assets/44bf5162-2353-4b90-9c55-0bc82e8e3f2d" />
 
-1. Lo que hacemos aqui es: first, we select the image to work with (input image [stimuli]). Using the C code fixed-point `lane_fixed.c`, we obtain our output image (output image [reference]) where Lane detection was applied.
+1. What we do here is: first, we select the image to work with (input image [stimuli]). Using the C code fixed-point `lane_fixed.c`, we obtain our output image (output image [reference]) where Lane detection was applied.
 2. Next, since VHDL cannot read the BMP format of the images from the previous step, we can convert them into text files (`.txt`) using the BMP files (in this case, `bmp2sim.c`). Each pixel in the image is represented using RGB, so this text file is quite large.
 3. Then there are the VHDL files containing the `testbench` and `design` sections. These, along with the `.txt` files from the previous step, can be integrated and used in `ModelSim` (VHDL Simulator). This results in a `.txt` file.
 4. And finally, to see the results in an image, we use the BMP file `sim2bmp.c` to convert the `.txt` output of ModelSim to a viewable `.bmp` image.
@@ -30,7 +30,9 @@ This directory contains the hardware implementation of a Lane Detection algorith
 Seguido a esto deberemos colocar nuestra placa, en este caso, la Altera Cyclone V y su modelo: 5CEBA2F17C6, y seleccionamos en la parte inferior, donde sale como una especie de lista, a nuestro modelo de placa. Y finalmente generamos el proyecto.
 
 2. En el apartado superior de `Project Navigator` lo colocamos en modo `Files`.
-3. Procedemos a seleccionar con un click el archivo `lane.vhd`. Luego nos vamos a la seccion superior donde aparacera `Assigments` y dentro de esta opcion buscamos `Import Assigments`
+3. Procedemos a seleccionar con un click el archivo `lane.vhd`. Luego nos vamos a la seccion superior donde aparacera `Assigments` y dentro de esta opcion buscamos `Import Assigments`. Aqui deberemos buscar, dandole click a los tres puntos, el archivo que contiene el pin map de la placa, el cual es (para este caso) `lane_default_Cyclone_V.qsf`.
+4. Una vez aplicado los pasos anteriores, le damos en `Run` (simbolo play) y nos ejecutara la Sintesis, largandonos como resultado un archivo .bit .
+5. Y aplicado los anteriores pasos, ya podremos subir el arhivo .bit obtenido ( o el archivo con extension `.sof`) en una placa FPGA fisica o en un laboratorio remoto de FPGA.
 
 
 ## 🛠️ Processing Tools (a.exe)
