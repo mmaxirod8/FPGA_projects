@@ -20,6 +20,12 @@ This directory contains the hardware implementation of a Lane Detection algorith
 4. And finally, to see the results in an image, we use the BMP file `sim2bmp.c` to convert the `.txt` output of ModelSim to a viewable `.bmp` image.
 
 - ***Implementation:***
+1. Como primer paso, configuramos Quartus Prime, dandole la ubicacion o directorio (en este mismo se deberan encontrar todos los archivos VHDL) y nombre del proyecto (este ultimo se debe llamar como el top file, en este caso: `lane`). Luego le damos en `Next` y en `Empty Project`, donde aqui seleccionaremos la opcion `Add all` y se cargaran todos los archivos VHDL.
+
+<img width="600" height="934" alt="Captura de pantalla 2026-02-26 143751" src="https://github.com/user-attachments/assets/4dcda073-41ed-4b60-a6da-2a1cd790ba44" />
+
+
+Seguido a esto deberemos colocar nuestra placa, en este caso, la Altera Cyclone V y su modelo: 5CEBA2F17C6, y seleccionamos en la parte inferior, donde sale como una especie de lista, a nuestro modelo de placa. Y finalmente generamos el proyecto
 
 
 ## 🛠️ Processing Tools (a.exe)
