@@ -10,22 +10,27 @@ This directory contains the hardware implementation of a Lane Detection algorith
 
 ## 🚀 How to use this project
 
-### Simulation Desing Flow
+### Simulation Desing Flow (Idea & Concepts)
 <img width="1770" height="729" alt="Design flow Lane detection" src="https://github.com/user-attachments/assets/44bf5162-2353-4b90-9c55-0bc82e8e3f2d" />
 
-- ***Simulation:***
-1. First, we select the image to work with (input image [stimuli]). Using the C code fixed-point `lane_fixed.c`, we obtain our output image (output image [reference]) where Lane detection was applied.
+1. Lo que hacemos aqui es: first, we select the image to work with (input image [stimuli]). Using the C code fixed-point `lane_fixed.c`, we obtain our output image (output image [reference]) where Lane detection was applied.
 2. Next, since VHDL cannot read the BMP format of the images from the previous step, we can convert them into text files (`.txt`) using the BMP files (in this case, `bmp2sim.c`). Each pixel in the image is represented using RGB, so this text file is quite large.
 3. Then there are the VHDL files containing the `testbench` and `design` sections. These, along with the `.txt` files from the previous step, can be integrated and used in `ModelSim` (VHDL Simulator). This results in a `.txt` file.
 4. And finally, to see the results in an image, we use the BMP file `sim2bmp.c` to convert the `.txt` output of ModelSim to a viewable `.bmp` image.
 
-- ***Implementation:***
-1. Como primer paso, configuramos Quartus Prime, dandole la ubicacion o directorio (en este mismo se deberan encontrar todos los archivos VHDL) y nombre del proyecto (este ultimo se debe llamar como el top file, en este caso: `lane`). Luego le damos en `Next` y en `Empty Project`, donde aqui seleccionaremos la opcion `Add all` y se cargaran todos los archivos VHDL.
+- ***Simulation on ModelSim:***
+1. Abrimos ModelSim
+
+- ***Implementation on Quartus Prime & FPGA board:***
+1. Como primer paso, configuramos Quartus Prime, dandole la ubicacion o directorio (en este mismo se deberan encontrar todos los archivos VHDL) y nombre del proyecto (este ultimo se debe llamar como el top level file, en este caso: `lane`). Luego le damos en `Next` y en `Empty Project`, donde aqui seleccionaremos la opcion `Add all` y se cargaran todos los archivos VHDL.
 
 <img width="600" height="934" alt="Captura de pantalla 2026-02-26 143751" src="https://github.com/user-attachments/assets/4dcda073-41ed-4b60-a6da-2a1cd790ba44" />
 
 
-Seguido a esto deberemos colocar nuestra placa, en este caso, la Altera Cyclone V y su modelo: 5CEBA2F17C6, y seleccionamos en la parte inferior, donde sale como una especie de lista, a nuestro modelo de placa. Y finalmente generamos el proyecto
+Seguido a esto deberemos colocar nuestra placa, en este caso, la Altera Cyclone V y su modelo: 5CEBA2F17C6, y seleccionamos en la parte inferior, donde sale como una especie de lista, a nuestro modelo de placa. Y finalmente generamos el proyecto.
+
+2. En el apartado superior de `Project Navigator` lo colocamos en modo `Files`.
+3. Procedemos a seleccionar con un click el archivo `lane.vhd`. Luego nos vamos a la seccion superior donde aparacera `Assigments` y dentro de esta opcion buscamos `Import Assigments`
 
 
 ## 🛠️ Processing Tools (a.exe)
