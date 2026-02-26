@@ -17,14 +17,14 @@ This project implements a synthetic video signal generator in VHDL. Its main fun
 
 This project does not require a real camera. You can view the output directly through simulation or remote labs (you can check this out on `Projects_Results/` of this repository):
 
-* ***Simulation:***
+* ***Simulation on ModelSim:***
 
 1.  **Open ModelSim:** Load the `sim_street_image.vhd` file and compile the project.
 2.  **Run Simulation:** Run the simulation for at least 1 video frame (approx. 16.7ms).
 3.  **Verify Output:** The testbench will create a file called `image_out.ppm`.
     * You can open this file with *IrfanView*, *GIMP* or online converters to see the synthetically generated road.
 
-* ***Implementation:***
+* ***Implementation on Quartus Prime & FPGA board:***
 1. Load the `street_image.vhd` and `lane_default_Cyclone_IV.qsf` (pin map) files into Quartus Prime, and run the Synthesis
 2. Once we have obtained the .bit file `street_image.sof` from the Synthesis (located in the output_files directory of your Quartus-Project on our computer), we can now run it on our FPGA or Remote Lab
 
