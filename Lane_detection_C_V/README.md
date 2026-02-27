@@ -4,13 +4,14 @@ This directory contains the hardware implementation of a Lane Detection algorith
 ## 📂 Folder Content
 
 * **`VHD Files/`**: Source code in VHDL: (filtering, memory and control modules
-   * `lane.vhd`
-   * `lane_g_matrix.vhd`
-   * `lane_g_root.vhd`
-   * `lane_linemem.vhd`
-   * `lane_sobel.vhd`
-   * `lane_sync.vhd`
-   * `sim_lane.vhd`
+   * `lane.vhd`: Es el módulo principal (top-level) que engloba todo el diseño. Se encarga de recibir las señales de reloj y de video de entrada (sincronización vertical, horizontal, habilitación de datos y componentes de color RGB). Su función es conectar estas señales con los submódulos de procesamiento (lane_sobel) y de sincronización (lane_sync) para luego emitir la señal de video procesada.
+   * `lane_g_matrix.vhd`:
+   * `lane_g_root.mif`:
+   * `lane_g_root_IP.vhd`:
+   * `lane_linemem.vhd`:
+   * `lane_sobel.vhd`:
+   * `lane_sync.vhd`:
+   * `sim_lane.vhd`:
 * **`C files/`**: C scripts (`bmp2sim`, `sim2bmp`) to convert BMP images to text and vice versa (necessary for simulation).
 * **`Images/`**: Input & Output images we obtain along the project.
 * **`Input and Output images txt/`**: Generated text files that represent the pixels for the simulation.
