@@ -75,7 +75,7 @@ This directory contains the hardware implementation of a Lane Detection algorith
 ---
 
 - 📌 ***Implementation on Quartus Prime & FPGA board: (paso a paso, util para otros proyectos)***
-1. Como primer paso, configuramos Quartus Prime. Creamos un nuevo proyecto en donde colocamos la ubicacion o directorio en la que estara guardado en nuestra computadora (en este mismo se deberan encontrar todos los archivos VHDL del proyecto en el que estemos trabajando) y nombre del proyecto (este ultimo se debe llamar como el top level file de este proyecto, en este caso: `lane`). Luego le damos en `Next` y en `Empty Project`, donde aqui seleccionaremos la opcion `Add all` y se cargaran todos los archivos VHDL.
+1. Como primer paso, configuramos Quartus Prime. Creamos un nuevo proyecto en donde colocamos la ubicacion o directorio en la que estara guardado en nuestra computadora (en este mismo se deberan encontrar todos los archivos VHDL del proyecto en el que estemos trabajando) y nombre del proyecto (este ultimo se debe llamar como el top level file del proyecto, en este caso: `lane`). Luego le damos en `Next` y en `Empty Project`, donde aqui seleccionaremos la opcion `Add all` y se cargaran todos los archivos VHDL.
 
 <p align="center">
 <img width="500" height="800" alt="Captura de pantalla 2026-02-26 143751" src="https://github.com/user-attachments/assets/4dcda073-41ed-4b60-a6da-2a1cd790ba44" />
