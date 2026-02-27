@@ -34,6 +34,8 @@ This project does not require a real camera. You can view the output directly th
 
 📌 ***Aclaracion:*** Para resolver dudas sobre como se realizan los primeros pasos y la configuracion de la implementacion en Quartus Prime, consulta la guía detallada en el directorio Lane_detection_C_V de este repositorio.
 
+---
+
   ### 🕵️ We can add an extra: Processing Modules (Lane Detection)
 *This folder also includes the same files found in the FPGA `Lane_detection_C_V` project (from this same repository), so we can apply its algorithm to `Image_Generator_C_IV`:*
 * **`lane.vhd`**: Upper entity that takes the video signal and applies lane detection.
