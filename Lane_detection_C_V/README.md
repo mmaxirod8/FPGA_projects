@@ -3,7 +3,7 @@ This directory contains the hardware implementation of a Lane Detection algorith
 
 ## 📂 Folder Content
 
-* **`VHD Files/`**: Source code in VHDL: (filtering, memory and control modules
+* **`VHD Files/`**: Source code in VHDL: (filtering, memory and control modules)
    * `lane.vhd`: Es el módulo principal (top-level) que engloba todo el diseño. Se encarga de recibir las señales de reloj y de video de entrada (sincronización vertical, horizontal, habilitación de datos y componentes de color RGB). Su función es conectar estas señales con los submódulos de procesamiento (lane_sobel) y de sincronización (lane_sync) para luego emitir la señal de video procesada.
    * `lane_g_matrix.vhd`: Se encarga de la aritmética para la matriz de 3x3 del filtro Sobel. Primero, toma los píxeles de entrada y los convierte del formato RGB a luminancia (Y). Luego, suma estos valores multiplicados por los coeficientes correspondientes de la matriz de Sobel (que puede ser horizontal o vertical) y emite el cuadrado de esa suma.
    * `lane_g_root.mif`: Es un archivo de inicialización de memoria (Memory Initialization File - MIF) utilizado para configurar el contenido inicial de la memoria ROM definida en lane_g_root_IP.vhd. Este archivo actúa como una tabla de búsqueda (Look-Up Table, LUT) precalculada. En lugar de que el sistema calcule matemáticamente en tiempo real la raíz cuadrada necesaria para determinar la nueva luminancia de un píxel, utiliza el valor de entrada (como una dirección, de la 0 a la 8191 ) para "buscar" instantáneamente el resultado correspondiente en esta tabla.
