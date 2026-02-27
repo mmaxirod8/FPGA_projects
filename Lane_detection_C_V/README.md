@@ -12,7 +12,13 @@ This directory contains the hardware implementation of a Lane Detection algorith
    * `lane_sobel.vhd`: Este archivo contiene el algoritmo central de detección de carriles. Utiliza dos memorias de línea para almacenar y crear una ventana o región de imagen de 3x3 píxeles. Calcula los gradientes direccionales instanciando la matriz horizontal y vertical, suma sus cuadrados, limita el valor resultante y utiliza una memoria ROM para calcular la raíz cuadrada que define la nueva luminancia de los píxeles de salida.
    * `lane_sync.vhd`: Su propósito es retrasar las señales de control y sincronización de video originales (sincronización vertical, horizontal y habilitación de datos) para que coincidan temporalmente con el retraso introducido por las etapas de procesamiento (pipeline) del filtro. Utiliza un arreglo para desplazar los valores un número de ciclos de reloj definido por un parámetro genérico.
    * `sim_lane.vhd`: Es el entorno de simulación o testbench del proyecto. Lee imágenes de prueba que están en formato de texto ("street_0_stimuli.txt"), inyecta estas señales en el módulo principal y luego compara los resultados de salida con un archivo que contiene las respuestas esperadas ("street_0_expected.txt"). Si encuentra alguna diferencia entre la salida simulada y la esperada, reporta una discrepancia (mismatch).
-* **`C files/`**: C scripts (`bmp2sim`, `sim2bmp`) to convert BMP images to text and vice versa (necessary for simulation).
+* **`C files/`**: C scripts (`bmp2sim`, `sim2bmp`) to convert BMP images to text and vice versa (necessary for simulation). More specific:
+   * `bmp2sim.c`: Utilidad que convierte una imagen BMP en un archivo de texto para que el simulador VHDL pueda usarla como entrada.
+   * `bmp24_io.c`: Librería auxiliar para abrir, leer y escribir imágenes en formato BMP de 24 bits.
+   * `lane_fixed.c`: Versión del algoritmo en punto fijo (enteros); imita exactamente cómo procesará los datos el hardware (FPGA).
+   * `lane_float.c`: Versión del algoritmo en punto flotante; sirve como referencia de "calidad ideal" para comparar resultados.
+   * `lane_testbench.c`: Genera automáticamente los archivos de estímulos (stimuli.txt) y de resultados esperados (expected.txt) para validar el código VHDL.
+   * `sim2bmp.c`: Convierte los archivos de texto generados por la simulación VHDL de vuelta a una imagen BMP para ver el resultado visualmente.
 * **`Images/`**: Input & Output images we obtain along the project.
 * **`Input and Output images txt/`**: Generated text files that represent the pixels for the simulation.
 
