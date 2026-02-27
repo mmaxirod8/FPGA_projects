@@ -8,6 +8,10 @@ This directory contains the hardware implementation of an FIR (Finite Impulse Re
     * `sharp_slice.vhd`, `sharp_linemem.vhd`: Line buffer logic and slices for pixel window processing.
     * `sharp_control.vhd`: State machine for flow control.
     * `sim_*.vhd`: Testbenches for simulation (including *self-checking*).
+
+
+
+    
 * **`Octave testing/`**: MATLAB/Octave scripts (`.m`) used to generate the test stimuli and mathematically verify the algorithm (open them with NotePad++ or text editor). More specific:
     * `prueba1.m`: Script de prueba rápida para aplicar un filtro de realce de bordes (FIR) a una imagen específica ("Street_A.bmp").
     * `sharp_generate_testbench_images.m`: Procesa una imagen y la exporta en formato de texto (.ppm) para ser usada como entrada y referencia en el simulador VHDL.
