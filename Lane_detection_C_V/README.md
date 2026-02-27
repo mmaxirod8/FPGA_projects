@@ -5,13 +5,13 @@ This directory contains the hardware implementation of a Lane Detection algorith
 
 * **`VHD Files/`**: Source code in VHDL: (filtering, memory and control modules
    * `lane.vhd`: Es el módulo principal (top-level) que engloba todo el diseño. Se encarga de recibir las señales de reloj y de video de entrada (sincronización vertical, horizontal, habilitación de datos y componentes de color RGB). Su función es conectar estas señales con los submódulos de procesamiento (lane_sobel) y de sincronización (lane_sync) para luego emitir la señal de video procesada.
-   * `lane_g_matrix.vhd`:
-   * `lane_g_root.mif`:
-   * `lane_g_root_IP.vhd`:
-   * `lane_linemem.vhd`:
-   * `lane_sobel.vhd`:
-   * `lane_sync.vhd`:
-   * `sim_lane.vhd`:
+   * `lane_g_matrix.vhd`: Se encarga de la aritmética para la matriz de 3x3 del filtro Sobel. Primero, toma los píxeles de entrada y los convierte del formato RGB a luminancia (Y). Luego, suma estos valores multiplicados por los coeficientes correspondientes de la matriz de Sobel (que puede ser horizontal o vertical) y emite el cuadrado de esa suma.
+   * `lane_g_root.mif`: Es un archivo de inicialización de memoria (Memory Initialization File - MIF) utilizado para configurar el contenido inicial de la memoria ROM definida en lane_g_root_IP.vhd. Este archivo actúa como una tabla de búsqueda (Look-Up Table, LUT) precalculada. En lugar de que el sistema calcule matemáticamente en tiempo real la raíz cuadrada necesaria para determinar la nueva luminancia de un píxel, utiliza el valor de entrada (como una dirección, de la 0 a la 8191 ) para "buscar" instantáneamente el resultado correspondiente en esta tabla.
+   * `lane_g_root_IP.vhd`: Es un bloque de propiedad intelectual (IP) generado automáticamente por un asistente (Megawizard). Define una memoria ROM sincrónica de un solo puerto que se inicializa con el archivo "lane_g_root.mif". En el contexto del diseño, esta ROM actúa como una tabla de búsqueda para calcular rápidamente operaciones matemáticas complejas, como la raíz cuadrada necesaria al final del filtro Sobel.
+   * `lane_linemem.vhd`: Implementa una memoria de línea diseñada para generar un retardo exacto de 1280 píxeles. Funciona mediante un arreglo de memoria RAM que guarda los datos de entrada en una dirección de escritura y los lee en una dirección de lectura para retrasar la señal una línea de video completa.
+   * `lane_sobel.vhd`: Este archivo contiene el algoritmo central de detección de carriles. Utiliza dos memorias de línea para almacenar y crear una ventana o región de imagen de 3x3 píxeles. Calcula los gradientes direccionales instanciando la matriz horizontal y vertical, suma sus cuadrados, limita el valor resultante y utiliza una memoria ROM para calcular la raíz cuadrada que define la nueva luminancia de los píxeles de salida.
+   * `lane_sync.vhd`: Su propósito es retrasar las señales de control y sincronización de video originales (sincronización vertical, horizontal y habilitación de datos) para que coincidan temporalmente con el retraso introducido por las etapas de procesamiento (pipeline) del filtro. Utiliza un arreglo para desplazar los valores un número de ciclos de reloj definido por un parámetro genérico.
+   * `sim_lane.vhd`: Es el entorno de simulación o testbench del proyecto. Lee imágenes de prueba que están en formato de texto ("street_0_stimuli.txt"), inyecta estas señales en el módulo principal y luego compara los resultados de salida con un archivo que contiene las respuestas esperadas ("street_0_expected.txt"). Si encuentra alguna diferencia entre la salida simulada y la esperada, reporta una discrepancia (mismatch).
 * **`C files/`**: C scripts (`bmp2sim`, `sim2bmp`) to convert BMP images to text and vice versa (necessary for simulation).
 * **`Images/`**: Input & Output images we obtain along the project.
 * **`Input and Output images txt/`**: Generated text files that represent the pixels for the simulation.
