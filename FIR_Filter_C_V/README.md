@@ -4,7 +4,7 @@ This directory contains the hardware implementation of an FIR (Finite Impulse Re
 ## 📂 Folder Content
 
 * **`VHD Files/`**: VHDL source code. Includes:
-    * `sharp.vhd`: Top entity del filtro.
+    * `sharp.vhd`: Filter top entity.
     * `sharp_slice.vhd`, `sharp_linemem.vhd`: Line buffer logic and slices for pixel window processing.
     * `sharp_control.vhd`: State machine for flow control.
     * `sim_*.vhd`: Testbenches for simulation (including *self-checking*).
