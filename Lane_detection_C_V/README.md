@@ -43,17 +43,17 @@ This directory contains the hardware implementation of a Lane Detection algorith
 ---
 
 - 📌 ***Simulation on ModelSim: (paso a paso, util para otros proyectos)***
-1. Abrimos ModelSim
-2. En esta parte si o si deben estar los archivos VHDL de diseño y testbench (simulacion). Por lo que cargamos los siguientes archivos VHDL en el programa: (aqui se pueden cargar otros archivos VHDL, dependiendo del proyecto en el que estemos)
+1. We open ModelSim
+2. This section absolutely requires the VHDL design and testbench (simulation) files. Therefore, we load the following VHDL files into the program: (other VHDL files can be loaded here, depending on the project)
 
 <p align="center">
 <img width= "500" height="600" alt="image" src="https://github.com/user-attachments/assets/c7400780-bf31-4d48-b842-eed4e78f077e" />
 </p>
 
-3. Buscamos en la seccion superior la pestaña `Compile`, la desplegamos y le damos en `Compile All`.
-4. Luego buscamos nuevamente en la parte superior la pestaña `Simulate`, desplegamos y le damos en `Start Simulation`.
-5. Nos aparecera una ventana en donde tenemos que clickear en el signo mas de la casilla `work`. Se desplegara una lista con los archivos que subimos anteriormente, buscamos el archivo `sim_lane` (asi se llama el archivo de simulacion de este proyecto), y le damos de nuevo al signo mas, donde por ultimo se desplegara una sub-lista y se encontrara el archivo `sim` (Arquitecture). Le damos click y luego en `Ok`.
-6. Luego, debemos ubicar las variables de input y output (en algunos proyectos quizas no existan todas estas variables, ya que varian segun el algoritmo implementado), seleccionadolas y arrastrandolas, de la siguiente manera:
+3. We look in the top section for the `Compile` tab, expand it and click on `Compile All`.
+4. Then we look again at the top for the `Simulate` tab, expand it and click on `Start Simulation`.
+5. A window will appear where you need to click the plus sign next to the `work` box. A list of the files you uploaded earlier will appear. Find the file `sim_lane` (this is the name of the simulation file for this project), and click the plus sign again. A sub-list will then appear, and you will find the file `sim` (Architecture). Click on it and then on `OK`.
+6. Next, we must locate the input and output variables (in some projects not all of these variables may exist, as they vary depending on the implemented algorithm), selecting and dragging them, as follows:
 
 <p align="center">
 <img width="500" height="630" alt="image" src="https://github.com/user-attachments/assets/8120d1b4-088a-4293-b7b7-bf47bb245b69" />
