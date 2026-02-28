@@ -17,8 +17,8 @@ This directory contains the hardware implementation of a Lane Detection algorith
 
    
 * **`C files/`**: C scripts (`bmp2sim`, `sim2bmp`) to convert BMP images to text and vice versa (necessary for simulation). More specific:
-   * `bmp2sim.c`: Utilidad que convierte una imagen BMP en un archivo de texto para que el simulador VHDL pueda usarla como entrada.
-   * `bmp24_io.c`: Librería auxiliar para abrir, leer y escribir imágenes en formato BMP de 24 bits.
+   * `bmp2sim.c`: Utility that converts a BMP image into a text file so that the VHDL simulator can use it as input.
+   * `bmp24_io.c`: Auxiliary library for opening, reading and writing images in 24-bit BMP format.
    * `lane_fixed.c`: Versión del algoritmo en punto fijo (enteros); imita exactamente cómo procesará los datos el hardware (FPGA).
    * `lane_float.c`: Versión del algoritmo en punto flotante; sirve como referencia de "calidad ideal" para comparar resultados.
    * `lane_testbench.c`: Genera automáticamente los archivos de estímulos (stimuli.txt) y de resultados esperados (expected.txt) para validar el código VHDL.
