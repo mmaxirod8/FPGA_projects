@@ -63,9 +63,9 @@ This directory contains the hardware implementation of a Lane Detection algorith
 <img width="800" height="605" alt="image" src="https://github.com/user-attachments/assets/fff1ec1f-b0a8-43fb-bec4-ebea6e9dd86a" />
 </p>
 
-***Aclaracion***: Aqui debemos de cambiar el formato de algunas variables. Aquellas que salgan con un valor de *UUUUUUUU*, las seleccionamos, le damos click derecho, en la ventana desplegamos la opcion `Radix` y por ultimo seleccionamos `Hexadecimal`. 
+***Clarification***: Here we need to change the format of some variables. Those that appear with a value of *UUUUUUUU*, we select them, right-click, in the window we expand the `Radix` option and finally select `Hexadecimal`.
 
-7. Finalmente, le damos en `Start Simulation`:
+7.Finally, we click on `Start Simulation`:
 
 <p align="center">
 <img width="900" height="200" alt="image" src="https://github.com/user-attachments/assets/a5df0943-78b5-4413-b810-cb3b711cb2bd" />
