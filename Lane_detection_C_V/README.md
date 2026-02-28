@@ -42,7 +42,7 @@ This directory contains the hardware implementation of a Lane Detection algorith
 
 ---
 
-- 📌 ***Simulation on ModelSim: (paso a paso, util para otros proyectos)***
+- 📌 ***Simulation on ModelSim: (step by step, useful for other projects)***
 1. We open ModelSim
 2. This section absolutely requires the VHDL design and testbench (simulation) files. Therefore, we load the following VHDL files into the program: (other VHDL files can be loaded here, depending on the project)
 
@@ -74,7 +74,7 @@ This directory contains the hardware implementation of a Lane Detection algorith
 
 ---
 
-- 📌 ***Implementation on Quartus Prime & FPGA board: (paso a paso, util para otros proyectos)***
+- 📌 ***Implementation on Quartus Prime & FPGA board: (step by step, useful for other projects)***
 1. Como primer paso, configuramos Quartus Prime. Creamos un nuevo proyecto en donde colocamos la ubicacion o directorio en la que estara guardado en nuestra computadora (en este mismo se deberan encontrar todos los archivos VHDL del proyecto en el que estemos trabajando) y nombre del proyecto (este ultimo se debe llamar como el top level file del proyecto, en este caso: `lane`). Luego le damos en `Next` y en `Empty Project`, donde aqui seleccionaremos la opcion `Add all` y se cargaran todos los archivos VHDL.
 
 <p align="center">
