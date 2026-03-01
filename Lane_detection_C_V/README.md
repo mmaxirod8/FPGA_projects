@@ -3,27 +3,6 @@ This directory contains the hardware implementation of a Lane Detection algorith
 
 ## 📂 Folder Content
 
-### Estructura del Proyecto
-```
-FPGA_projects/
-├── Lane_detection_C_V/         
-│   ├── s/
-│   │   ├── m
-│   │   ├── c
-│   │   ├── c
-│   │   ├── d
-│   │   └── c
-│   ├── C
-│   └── C
-├── Image_generator_C_IV/         
-│   ├── ma
-│   ├── r
-│   └── tes/
-│       └── c
-├── FIR_Filter_C_V            
-├── Projects_results         
-```
-
 * **`VHD Files/`**: Source code in VHDL: (filtering, memory and control modules)
    * `lane.vhd`: This is the main (top-level) module that encompasses the entire design. It is responsible for receiving the input clock and video signals (vertical and horizontal sync, data enable, and RGB color components). Its function is to connect these signals to the processing (lane_sobel) and synchronization (lane_sync) sub-modules and then output the processed video signal.
    * `lane_g_matrix.vhd`: It handles the arithmetic for the 3x3 Sobel filter matrix. First, it takes the input pixels and converts them from RGB format to luminance (Y). Then, it sums these values ​​multiplied by the corresponding coefficients of the Sobel matrix (which can be horizontal or vertical) and outputs the square of that sum.
