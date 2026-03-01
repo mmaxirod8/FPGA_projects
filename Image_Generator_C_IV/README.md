@@ -4,12 +4,11 @@ This project implements a synthetic video signal generator in VHDL. Its main fun
 
 ## 📂 Folder Content
 
-* `Generator Module (Core)`
+
   * **`street_image.vhd`**: The heart of the project. It generates VGA sync signals (640x480 @ 60Hz) and procedurally "draws" the scene.
      * **Generated elements:** Sky, grass and a gray road with a center line.
      * **Animation:** Simulate a curved road by calculating the variable center position (`center_pos`) line by line.
 
-* `Simulation`
   * **`sim_street_image.vhd`**: Testbench designed to visually validate the generator.
      * It generates an `.ppm` (Portable Pixel Map) output file that allows you to see on your computer the exact image that the FPGA would send to the VGA monitor.
 
