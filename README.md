@@ -9,15 +9,45 @@ Some abbreviations (like "C_V", "C_IV", "X_N_3", etc.) are for the following FPG
 ```
 FPGA_projects/
 ├── Lane_detection_C_V/         
-│   ├── s/
-│   │   ├── m ---
-│   │   ├── c
-│   │   ├── c
-│   │   ├── d
-│   │   └── c
-│   ├── C
-│   └── C
-├── Image_generator_C_IV/         
+│   ├── C files/
+│   │   ├── bmp24_io.c
+│   │   ├── bmp2sim.c
+│   │   ├── lane_fixed.c
+│   │   ├── lane_float.c
+│   │   ├── lane_testbench.c
+│   │   └── simp2bmp.c
+│   │
+│   ├── Images
+│   │   ├── Simulation Looks like
+│   │   │   ├── VHDL Simulation 2.png
+│   │   │   ├── VHDL Simulation.png
+│   │   │     
+│   │   ├── Street_A_edge_fixed.bmp
+│   │   ├── Street_C_edge_float.bmp
+│   │   ├── street_A.bmp
+│   │   ├── street_A_edge_float.bmp
+│   │   ├── street_B.bmp
+│   │   ├── street_B_edge_float.bmp
+│   │   └── street_C.bmp
+│   │
+│   ├── Input and Output images txt (self-testbench)
+│   │   ├── street_0_expected.txt
+│   │   └── street_0_stimuli.txt
+│   │
+│   ├── 
+│   │
+│
+│
+│
+│
+│
+│
+│
+│
+│
+│
+│
+├── Image_Generator_C_IV/         
 │   ├── ma
 │   ├── r
 │   └── tes/
