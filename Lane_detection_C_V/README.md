@@ -1,5 +1,5 @@
 # 🛣️ **Lane Detection in FPGA (Cyclone V)**
-This directory contains the hardware implementation of a Lane Detection algorithm using image processing filters.
+This directory contains the hardware implementation of a Lane Detection algorithm using image processing filters for a FPGA.
 
 ## 📂 Folder Content
 
