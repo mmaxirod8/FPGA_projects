@@ -5,6 +5,27 @@ Some abbreviations (like "C_V", "C_IV", "X_N_3", etc.) are for the following FPG
  - X --> Xilinx / N --> Nexys (Board model) / N° [e.g: 3] (Version number of the board model)
  - X --> Xilinx / Z --> Zedboard (Board model) 
 
+### 🗃️ Estructura del Proyecto
+```
+FPGA_projects/
+├── Lane_detection_C_V/         
+│   ├── s/
+│   │   ├── m ---
+│   │   ├── c
+│   │   ├── c
+│   │   ├── d
+│   │   └── c
+│   ├── C
+│   └── C
+├── Image_generator_C_IV/         
+│   ├── ma
+│   ├── r
+│   └── tes/
+│       └── c
+├── FIR_Filter_C_V            
+├── Projects_results         
+```
+
 ¡I hope you find it useful!
 
 
