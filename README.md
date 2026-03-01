@@ -8,6 +8,9 @@ Some abbreviations (like "C_V", "C_IV", "X_N_3", etc.) are for the following FPG
 ### 🗃️ Estructura del Proyecto
 ```
 FPGA_projects/
+├── FIR_Filter_C_V  
+│   ├── 
+│
 ├── Lane_detection_C_V/         
 │   ├── C files/
 │   │   ├── bmp24_io.c
@@ -17,7 +20,7 @@ FPGA_projects/
 │   │   ├── lane_testbench.c
 │   │   └── simp2bmp.c
 │   │
-│   ├── Images
+│   ├── Images/
 │   │   ├── Simulation Looks like
 │   │   │   ├── VHDL Simulation 2.png
 │   │   │   ├── VHDL Simulation.png
@@ -30,29 +33,30 @@ FPGA_projects/
 │   │   ├── street_B_edge_float.bmp
 │   │   └── street_C.bmp
 │   │
-│   ├── Input and Output images txt (self-testbench)
+│   ├── Input and Output images txt (self-testbench)/
 │   │   ├── street_0_expected.txt
 │   │   └── street_0_stimuli.txt
 │   │
-│   ├── 
+│   ├── VHD Files/
+│   │   ├── lane.vhd
+│   │     ├── lane_g_matrix.vhd
+│   │     ├── lane_g_root.mif
+│   │     ├── lane_g_root_IP.vhd
+│   │     ├──lane_linemem.vhd
+│   │     ├── lane_sobel.vhd
+│   │     ├── lane_sync.vhd
+│   │     └── sim_lane.vhd
 │   │
-│
-│
-│
-│
-│
-│
-│
-│
-│
-│
+│   ├── README.md
+│   │
+│   └── a.exe
 │
 ├── Image_Generator_C_IV/         
 │   ├── ma
 │   ├── r
 │   └── tes/
 │       └── c
-├── FIR_Filter_C_V            
+│
 ├── Projects_results         
 ```
 
