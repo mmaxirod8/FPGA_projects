@@ -9,7 +9,28 @@ Some abbreviations (like "C_V", "C_IV", "X_N_3", etc.) are for the following FPG
 ```
 FPGA_projects/
 ├── FIR_Filter_C_V  
-│   ├── 
+│   ├── Octave Images
+│   │
+│   ├── Octave testing
+│   │
+│   ├── VHD Files
+│   │
+│   ├── README.md
+│   │
+│   ├── sharp.sdc
+│   │
+│   └── sharp_default_Cyclone_V.qsf
+│
+│
+├── Image_Generator_C_IV/         
+│   ├── Lane_detection_VHD_Files
+│   │ 
+│   ├── Street_image_VHD_Files
+│   │
+│   ├── README.md
+│   │
+│   └── lane_default_Cyclone_IV
+│       
 │
 ├── Lane_detection_C_V/         
 │   ├── C files/
@@ -51,13 +72,11 @@ FPGA_projects/
 │   │
 │   └── a.exe
 │
-├── Image_Generator_C_IV/         
-│   ├── ma
-│   ├── r
-│   └── tes/
-│       └── c
 │
-├── Projects_results         
+├── Projects_results
+│
+│
+└── README.md
 ```
 
 ¡I hope you find it useful!
