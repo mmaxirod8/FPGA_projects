@@ -35,14 +35,14 @@ The workflow is hybrid, using Octave to pre-process the images and ModelSim for 
 
 2. **VHDL Simulation:** Open the project in ModelSim, compile the files in `VHD Files/`, and run the testbench `sim_sharp.vhd`. 
 
-⚠️ ***Aclaracion:*** Para resolver dudas sobre como se realizan los primeros pasos y la configuracion de la simulación en ModelSim, consulta la guía detallada en el directorio `Lane_detection_C_V` de este repositorio.
+⚠️ ***Clarification:*** To resolve doubts about how to perform the first steps and configure the simulation in ModelSim, consult the detailed guide in the `Lane_detection_C_V` directory of this repository.
 
 ---
 
 - ***📌 Implemtation on Quartus Prime & FPGA board***
      * After simulating in ModelSim and verifying the code's functionality, we will proceed to implement all the `VHD Files/` plus the `.qsf` file of the board to be used (pin map) in Altera Quartus Prime (by executing "Synthesis"). From here, we will obtain the `.sof` bitfile (located in the `output_files` directory of your Quartus-Project on our computer), and with this, we are ready to implement our algorithm on a remote or physical FPGA.
 
-⚠️ ***Aclaracion:*** Para resolver dudas sobre como se realizan los primeros pasos y la configuracion de la implementacion en Quartus Prime, consulta la guía detallada en el directorio `Lane_detection_C_V` de este repositorio.
+⚠️ ***Clarification:*** To resolve doubts about how to perform the first steps and configuration of the implementation in Quartus Prime, consult the detailed guide in the `Lane_detection_C_V` directory of this repository.
 
 ---
 
