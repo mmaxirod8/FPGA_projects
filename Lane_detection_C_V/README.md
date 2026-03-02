@@ -40,7 +40,7 @@ This directory contains the hardware implementation of a Lane Detection algorith
 3. Then there are the VHDL files containing the `testbench` and `design` sections. These, along with the `.txt` files from the previous step, can be integrated and used in `ModelSim` (VHDL Simulator). This results in a `.txt` file.
 4. And finally, to see the results in an image, we use the BMP file `sim2bmp.c` to convert the `.txt` output of ModelSim to a viewable `.bmp` image.
 
-👉 Look closely, the image names must be changed both in the script to be implemented and in the VHDL testbench file if an error ocurrs.
+👉 ***Look closely, the image names must be changed both in the script to be implemented and in the VHDL testbench file if an error ocurrs.***
 
 ---
 
