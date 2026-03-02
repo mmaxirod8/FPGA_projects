@@ -1,6 +1,10 @@
 # 📶 FIR Filter: Image Sharpening (Cyclone V)
 
-This directory contains the hardware implementation of an FIR (Finite Impulse Response) filter configured as an image sharpening filter for real-time image processing on a Cyclone V FPGA.
+This directory contains the hardware implementation of an FIR (Finite Impulse Response) filter configured as an image sharpening filter for real-time image processing on an Altera Cyclone V 5CEBA2F17C6 FPGA.
+<p align="center">
+<img width="200" height="100" alt="image" src="https://github.com/user-attachments/assets/fdf63e40-c3db-43dc-b9ea-e12e3564460d" />
+</p>
+
 ## 📂 Folder Content
 
 * **`VHD Files/`**: VHDL source code. Includes:
