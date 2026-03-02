@@ -2,9 +2,13 @@
 
 This project implements a synthetic video signal generator in VHDL. Its main function is to simulate the input from a camera for Advanced Driver Assistance Systems (ADAS), generating a road scene with movement and curves without the need for external capture hardware. This project was carried out using an Altera Cyclone IV FPGA (EP4CE22E22C7).
 
+<p align="center">
+<img width="200" height="100" alt="image" src="https://github.com/user-attachments/assets/0b429ab6-63c8-4d7c-9bde-63a4fd925771" />
+
+</p>
+
+
 ## 📂 Folder Content
-
-
   * **`street_image.vhd`**: The heart of the project. It generates VGA sync signals (640x480 @ 60Hz) and procedurally "draws" the scene.
      * **Generated elements:** Sky, grass and a gray road with a center line.
      * **Animation:** Simulate a curved road by calculating the variable center position (`center_pos`) line by line.
