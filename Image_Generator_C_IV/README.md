@@ -23,7 +23,7 @@ This project does not require a real camera. You can view the output directly th
 3.  **Verify Output:** The testbench will create a file called `image_out.ppm`.
     * You can open this file with *IrfanView*, *GIMP* or online converters to see the synthetically generated road.
 
-⚠️ ***Aclaracion:*** Para resolver dudas sobre como se realizan los primeros pasos y la configuracion de la simulación en ModelSim, consulta la guía detallada en el directorio Lane_detection_C_V de este repositorio.
+⚠️ ***Clarification:*** To resolve doubts about how to perform the first steps and configure the simulation in ModelSim, consult the detailed guide in the `Lane_detection_C_V` directory of this repository.
 
 ---
 
@@ -31,7 +31,7 @@ This project does not require a real camera. You can view the output directly th
 1. Load the `street_image.vhd` and `lane_default_Cyclone_IV.qsf` (pin map) files into Quartus Prime, and run the Synthesis.
 2. Once we have obtained the .bit file `street_image.sof` from the Synthesis (located in the output_files directory of your Quartus-Project on our computer), we can now run it on our FPGA or Remote Lab.
 
-⚠️ ***Aclaracion:*** Para resolver dudas sobre como se realizan los primeros pasos y la configuracion de la implementacion en Quartus Prime, consulta la guía detallada en el directorio Lane_detection_C_V de este repositorio.
+⚠️ ***Clarification:*** To resolve doubts about how to perform the first steps and configuration of the implementation in Quartus Prime, consult the detailed guide in the `Lane_detection_C_V` directory of this repository.
 
 ---
 
