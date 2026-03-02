@@ -77,18 +77,18 @@ This directory contains the hardware implementation of a Lane Detection algorith
 ---
 
 - 📌 ***Implementation on Quartus Prime & FPGA board: (step by step, useful for other projects)***
-1. Como primer paso, configuramos Quartus Prime. Creamos un nuevo proyecto en donde colocamos la ubicacion o directorio en la que estara guardado en nuestra computadora (en este mismo se deberan encontrar todos los archivos VHDL del proyecto en el que estemos trabajando) y nombre del proyecto (este ultimo se debe llamar como el top level file del proyecto, en este caso: `lane`). Luego le damos en `Next` y en `Empty Project`, donde aqui seleccionaremos la opcion `Add all` y se cargaran todos los archivos VHDL.
+1. As a first step, we configure Quartus Prime. We create a new project, specifying the location or directory where it will be saved on our computer (this should contain all the VHDL files for the project we are working on) and the project name (this should be the same as the project's top-level file, in this case: `lane`). Then we click `Next` and then `Empty Project`, where we select the `Add all` option, and all the VHDL files will be loaded. 
 
 <p align="center">
 <img width="500" height="800" alt="Captura de pantalla 2026-02-26 143751" src="https://github.com/user-attachments/assets/4dcda073-41ed-4b60-a6da-2a1cd790ba44" />
 </p>
 
-Seguido a esto deberemos colocar nuestra placa, en este caso, la Altera Cyclone V y su modelo: 5CEBA2F17C6, y seleccionamos en la parte inferior, donde sale como una especie de lista, a nuestro modelo de placa. Finalmente generamos el proyecto.
+Next, we need to select our board, in this case, the Altera Cyclone V, model 5CEBA2F17C6, and choose it from the list at the bottom. Finally, we generate the project.
 
-2. En el apartado superior de `Project Navigator` lo colocamos en modo `Files`.
-3. Procedemos a seleccionar con un click el archivo `lane.vhd` (archivo top level del proyecto). Luego nos vamos a la seccion superior donde aparacera `Assigments` y dentro de esta opcion buscamos `Import Assigments`. Aqui deberemos buscar, dandole click a los tres puntos, el archivo que contiene el pin map de la placa en la que ejecutaremos el proyecto, el cual es (para este caso) `lane_default_Cyclone_V.qsf`.
-4. Una vez aplicado los pasos anteriores, le damos en `Run` (simbolo play) y nos ejecutara la Sintesis, largandonos como resultado un archivo .bit .
-5. Y aplicado los anteriores pasos, ya podremos subir el arhivo .bit obtenido ( o el archivo con extension `.sof`) en una placa FPGA fisica o en un laboratorio remoto de FPGA.
+2. In the top section of `Project Navigator`, we set it to `Files` mode.
+3. We proceed to select the `lane.vhd` file (the project's top-level file) with a click. Then we go to the top section where `Assignments` appears, and within this option, we look for `Import Assignments`. Here, we must find, by clicking the three dots, the file that contains the pin map of the board on which we will run the project, which is (in this case) `lane_default_Cyclone_V.qsf`.
+4. Once the previous steps have been applied, we click on `Run` (play symbol) and it will execute the Synthesis, giving us a .bit file as a result.
+5. And after applying the previous steps, we will be able to upload the obtained .bit file (or the file with the `.sof` extension) to a physical FPGA board or to a remote FPGA lab.
 
 
 ## 🛠️ Processing Tools (a.exe)
