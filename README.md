@@ -10,16 +10,22 @@
 FPGA_projects/
 ├── FIR_Filter_C_V  
 │   ├── Octave Images/
-│   │   ├── 
+│   │   ├── street_A.bmp
+│   │   └── street_AA.bmp
 │   │
 │   ├── Octave testing/
-│   │   ├──
+│   │   ├── prueba1.m
+│   │   ├── sharp_generate_testbench_images.m
+│   │   ├── sharp_image_filter.m
+│   │   └── write_ascii_ppm.m
 │   │
 │   ├── VHD Files/
-│   │   ├──
+│   │   ├── sharp.vhd
 │   │ 
 │   ├── README.md
+│   │
 │   ├── sharp.sdc
+│   │
 │   └── sharp_default_Cyclone_V.qsf
 │
 │
