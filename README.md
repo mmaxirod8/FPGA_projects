@@ -35,6 +35,7 @@ FPGA_projects/
 │   └── sharp_default_Cyclone_V.qsf
 │
 │
+│
 ├── Image_Generator_C_IV/         
 │   ├── Lane_detection_VHD_Files/
 │   │   ├── lane.vhd
@@ -53,6 +54,7 @@ FPGA_projects/
 │   │
 │   └── lane_default_Cyclone_IV
 │       
+│
 │
 ├── Lane_detection_C_V/         
 │   ├── C files/
@@ -95,13 +97,36 @@ FPGA_projects/
 │   └── a.exe
 │
 │
+│
 ├── Projects_results
 │   ├── FIR Filter Cyclone V/
-│   ├── Image Generator Cyclone/
+│   │   ├── FIRFilter_CV_screenshot_1.png
+│   │   ├── FIRFilter_CV_screenshot_2.png
+│   │   ├── FIRFilter_remotelab_inputimage.png
+│   │   └── FIRFilter_remotelab_outputimage.png
+│   │
+│   ├── Image Generator Cyclone IV/
+│   │   ├── ImageGenerator_CIVE_video.mp4
+│   │   ├── ImageGenerator_CIVvideo_screenshot_1.png
+│   │   └── ImageGenerator_CIVvideo_screenshot_2.png
+│   │
 │   ├── Lane detection Cyclone V/
+│   │   ├── Lane_detector_CIVE_screenshot_1.png
+│   │   ├── Lane_detector_CIVE_screenshot_2.png
+│   │   ├── Lane_detector_CV_screenshot_1.png
+│   │   └── Lane_detector_CV_screenshot_2.png
+│   │
 │   ├── Test Images/
+│   │   ├── rutasanluis_1280x720.jpg
+│   │   ├── rutasanluis_originalformat.jpg
+│   │   ├── street_A.png
+│   │   ├── street_B.png
+│   │   └── street_C.png
+│   │
 │   ├── Machine Learning Result.png
+│   │
 │   └── README.md
+│
 │
 │
 └── README.md
