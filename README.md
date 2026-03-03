@@ -21,6 +21,12 @@ FPGA_projects/
 │   │
 │   ├── VHD Files/
 │   │   ├── sharp.vhd
+│   │   ├── sharp_arith.vhd
+│   │   ├── sharp_control.vhd
+│   │   ├── sharp_linemem.vhd
+│   │   ├── sharp_slice.vhd
+│   │   ├── sim_sharp.vhd
+│   │   └── sim_sharp_self-checking.vhd
 │   │ 
 │   ├── README.md
 │   │
