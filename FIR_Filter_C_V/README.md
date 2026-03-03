@@ -25,6 +25,10 @@ This directory contains the hardware implementation of an FIR (Finite Impulse Re
 * *Root Files*:
     * `sharp.sdc`: Time constraints file (Synopsys Design Constraints).
     * `sharp_default_Cyclone_V.qsf`: Pin configuration and project for Quartus Prime.
+    
+
+
+👉 **Los archivos dentro `VHDL Files` y los `sharp.sdc`, `sharp_default_Cyclone_V.qs` deben estar incluidos en las carpetas de proyecto de ModelSim y Quartus Prime**
 
 ## 🚀 How to use this project
 
