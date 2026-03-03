@@ -37,8 +37,20 @@ FPGA_projects/
 │
 ├── Image_Generator_C_IV/         
 │   ├── Lane_detection_VHD_Files/
+│   │   ├── lane.vhd
+│   │   ├── lane_g_matrix.vhd
+│   │   ├── lane_g_root.mif
+│   │   ├── lane_g_root_IP.vhd
+│   │   ├── lane_linemem.vhd
+│   │   ├── lane_sobel.vhd
+│   │   └── lane_sync.vhd
+│   │
 │   ├── Street_image_VHD_Files/
+│   │   ├── sim_street_image.vhd
+│   │   └── street_image.vhd
+│   │
 │   ├── README.md
+│   │
 │   └── lane_default_Cyclone_IV
 │       
 │
