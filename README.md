@@ -5,7 +5,7 @@
  - X --> Xilinx / N --> Nexys (Board model) / N° [e.g: 3] (Version number of the board model)
  - X --> Xilinx / Z --> Zedboard (Board model) 
 
-### 🗃️ Estructura del Proyecto
+### 🗃️ Project structure
 ```
 FPGA_projects/
 ├── FIR_Filter_C_V  
@@ -68,7 +68,7 @@ FPGA_projects/
 │   ├── Images/
 │   │   ├── Simulation Looks like
 │   │   │   ├── VHDL Simulation 2.png
-│   │   │   ├── VHDL Simulation.png
+│   │   │   └── VHDL Simulation.png
 │   │   │     
 │   │   ├── Street_A_edge_fixed.bmp
 │   │   ├── Street_C_edge_float.bmp
