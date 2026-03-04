@@ -28,7 +28,7 @@ This directory contains the hardware implementation of an FIR (Finite Impulse Re
     
 
 
-👉 **Los archivos dentro `VHDL Files` y los `sharp.sdc`, `sharp_default_Cyclone_V.qs` deben estar incluidos en las carpetas de proyecto de ModelSim y Quartus Prime**
+👉 **The files within `VHDL Files` and the `sharp.sdc` and `sharp_default_Cyclone_V.qs` files must be included in the ModelSim and Quartus Prime project folders.**
 
 ## 🚀 How to use this project
 
